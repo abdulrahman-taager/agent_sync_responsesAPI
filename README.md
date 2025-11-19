@@ -41,7 +41,7 @@ CREATE TABLE openai_chat_history (
 ```
 
 
-## 🔄 How It Works
+## How It Works
 
 1.  **Connect:** The script establishes a connection to the PostgreSQL database defined in the `.env` file.
 2.  **Poll:** It enters an infinite loop, querying the `openai_responses` table every 10 seconds.
@@ -49,3 +49,8 @@ CREATE TABLE openai_chat_history (
 4.  **Fetch:** For every new record, it calls the OpenAI API (`/v1/responses/{id}`) to retrieve the input prompts and the final model output.
 5.  **Merge:** It combines inputs and outputs into a single chronological list.
 6.  **Save:** It writes this list to the `openai_chat_history` table.
+
+
+## Logs
+
+![alt text](<Screenshot 2025-11-19 at 8.12.59 PM.png>)
